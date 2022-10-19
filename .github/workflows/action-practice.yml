@@ -2,20 +2,17 @@ name: build
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
-# action 동작
 jobs:
-  # OS 환경
   build:
-    runs-on: ubuntu-18.04
-
+    runs-on: ubuntu-latest
     steps:
-      # 모듈 설치
-      - name: Install modules
-        run: npm install
-      # testcode 실행
-      - name: Run test codes
-        run: npm run test
-      # 빌드
-      - name: Build project
-        run: npm run build
+      - name: Download files from the current repository
+        uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - name: build
+        run: <build_command>
