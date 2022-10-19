@@ -16,14 +16,7 @@ jobs:
           node-version: "16.x"
       - name: install
         run: npm install
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download files from the current repository
-        uses: actions/checkout@v2
-      - name: Install Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: "16.x"
       - name: build
-        run: npm build
+        run: npm run build
+      - name: check file
+        run: ls -a
