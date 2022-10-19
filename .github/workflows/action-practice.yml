@@ -5,6 +5,17 @@ on:
   workflow_dispatch:
 
 jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download files from the current repository
+        uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+      - name: install
+        run: npm install
   build:
     runs-on: ubuntu-latest
     steps:
@@ -13,6 +24,6 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: "14.x"
+          node-version: "16.x"
       - name: build
-        run: npm install
+        run: npm build
