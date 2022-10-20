@@ -25,7 +25,7 @@ jobs:
         host: ${{ secrets.SERVER_HOST }}
         username: ${{ secrets.SERVER_NAME }}
         key: ${{ secrets.SSH_PEM_KEY }}
-        passphrase: ${{ secrets.SSH_PEM_KEY }}
+        passphrase: ${{ secrets.SSH_PEM_PASSPHRASE }}
         source: "build/*"
         strip_components: 1
         target: ${{ secrets.SERVER_PATH }}
