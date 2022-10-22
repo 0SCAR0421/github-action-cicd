@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          새싹화이팅!
+          oscar0421.com
         </a>
       </header>
     </div>
